@@ -25,11 +25,11 @@ public class Gun : HolsteredObject
         if (hitScan)
         {
             Ray ray = new Ray(spawnPoint.position, spawnPoint.forward);
-            BlockHit hit = Fire(ray);
+            Vector3 hit = Fire(ray);
             Vector3 endPos = spawnPoint.position + spawnPoint.forward * hitScanDistance;
             if (hit != null)
             {
-                endPos = hit.point;
+                endPos = hit;
             }
             if (lineRenderer)
             {
@@ -41,18 +41,20 @@ public class Gun : HolsteredObject
         }
         else
         {
+            /*
             GameObject go = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
             Projectile p = go.GetComponent<Projectile>();
             if (p != null)
             {
                 p.player = true;
             }
+            */
         }
     }
 
-    public virtual BlockHit Fire(Ray ray)
+    public virtual Vector3 Fire(Ray ray)
     {
-        return null;
+        return Vector3.zero;
     }
 
     IEnumerator HideLine()
