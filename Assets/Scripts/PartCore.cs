@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PartCore : MonoBehaviour
 {
+    public static PartCore Instance;
+    public Rigidbody rb;
     public Transform axelRightFront, axelRightBack, axelLeftFront, axelLeftBack;
     public PartAxelOut axelRightFrontPart, axelRightBackPart, axelLeftFrontPart, axelLeftBackPart;
     public float speed;
     bool left, right;
+    void Start()
+    {
+        Instance = this;
+    }
     public void LeftTriggerDown()
     {
         left = true;
@@ -42,8 +48,8 @@ public class PartCore : MonoBehaviour
         if(right){
             axelRightBack.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
             axelRightFront.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
-            axelRightFrontPart.control = -speed;
-            axelRightBackPart.control = -speed;
+            axelRightFrontPart.control = speed;
+            axelRightBackPart.control = speed;
         }
         else
         {
