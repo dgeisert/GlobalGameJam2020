@@ -5,6 +5,7 @@ using UnityEngine;
 public class SnapZoneAxialManager : MonoBehaviour
 {
     public Transform touchingObject;
+    public Transform referenceObject;
     public PartAxelOut rot1, rot2, rot3, rot4;
 
     void Update()
@@ -15,7 +16,8 @@ public class SnapZoneAxialManager : MonoBehaviour
             {
                 return;
             }
-            float angle = Quaternion.FromToRotation(transform.forward, touchingObject.forward).eulerAngles.magnitude;
+            referenceObject.transform.rotation = touchingObject.transform.rotation;
+            float angle = referenceObject.localEulerAngles.y + 45;
             while(angle < 0){
                 angle += 360;
             }
@@ -28,6 +30,13 @@ public class SnapZoneAxialManager : MonoBehaviour
             rot2.gameObject.SetActive(chooseRot == 1);
             rot3.gameObject.SetActive(chooseRot == 2);
             rot4.gameObject.SetActive(chooseRot == 3);
+        }
+        if(!rot1.gameObject.activeInHierarchy &&
+            !rot2.gameObject.activeInHierarchy &&
+            !rot3.gameObject.activeInHierarchy &&
+            !rot4.gameObject.activeInHierarchy)
+        {
+            rot1.gameObject.SetActive(true);
         }
     }
     public void OnTouch(GameObject go)
