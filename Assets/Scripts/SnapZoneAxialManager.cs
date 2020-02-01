@@ -5,29 +5,42 @@ using UnityEngine;
 public class SnapZoneAxialManager : MonoBehaviour
 {
     public Transform touchingObject;
-    public PartAxelOut rot1, rot2, rot3, rot4;
+    public PartAxelOut[] rots;
 
     void Update()
     {
         if(touchingObject != null)
         {
-            if(rot1.children.Count > 0 || rot2.children.Count > 0 || rot3.children.Count > 0 || rot4.children.Count > 0)
+            // Setting initial value to -1, the lowest a dot product of two unit vectors can be
+            float biggestDotProduct = -1.0f;
+
+            // Setting to -1 as this means a value wasn't chosen (shouldn't happen, represents error)
+            int chooseRot = -1;
+
+            for(int i = 0; i < rots.Length; i++)
             {
-                return;
+                // Check for children
+                if(rots[i].children.Count > 0)
+                {
+                    return;
+                }
+
+                // Disable all on first pass
+                rots[i].gameObject.SetActive(false);
+
+                // This value will get closer to 1 if the angles of the two vectors are close
+                float dot = Vector3.Dot(rots[i].transform.forward, touchingObject.forward);
+
+                if(dot > biggestDotProduct)
+                {
+                    chooseRot = i;
+                    biggestDotProduct = dot;
+                }
             }
-            float angle = Quaternion.FromToRotation(transform.forward, touchingObject.forward).eulerAngles.magnitude;
-            while(angle < 0){
-                angle += 360;
-            }
-            while(angle > 360){
-                angle -= 360;
-            }
-            int chooseRot = Mathf.FloorToInt(angle / 90);
+           
+            // Enable chosen item
             Debug.Log("Rotation: " + chooseRot);
-            rot1.gameObject.SetActive(chooseRot == 0);
-            rot2.gameObject.SetActive(chooseRot == 1);
-            rot3.gameObject.SetActive(chooseRot == 2);
-            rot4.gameObject.SetActive(chooseRot == 3);
+            rots[chooseRot].gameObject.SetActive(true);
         }
     }
     public void OnTouch(GameObject go)

@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchingObject: {fileID: 0}
-  rot1: {fileID: 1647251464627954887}
-  rot2: {fileID: 2160516516422233577}
-  rot3: {fileID: 6546450447429457540}
-  rot4: {fileID: 4572204970668580114}
+  rots:
+  - {fileID: 1647251464627954887}
+  - {fileID: 2160516516422233577}
+  - {fileID: 6546450447429457540}
+  - {fileID: 4572204970668580114}
 --- !u!1001 &3589264151564605949
 PrefabInstance:
   m_ObjectHideFlags: 0
