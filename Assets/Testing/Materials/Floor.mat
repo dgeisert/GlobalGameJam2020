@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ReflectiveCubes
+  m_Name: Floor
   m_Shader: {fileID: 23, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: d47c51b63dda0614fb7742555df259f0, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Shininess: 0.106
+    - _Shininess: 0.078125
     m_Colors:
-    - _Color: {r: 0, g: 0.056693856, b: 0.63235295, a: 1}
+    - _Color: {r: 0, g: 0.7075472, b: 0.11662869, a: 1}
     - _ReflectColor: {r: 0.3584906, g: 0, b: 0, a: 0.5019608}
     - _SpecColor: {r: 1, g: 0, b: 0.8896551, a: 1}

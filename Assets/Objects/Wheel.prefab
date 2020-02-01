@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c746b2fca985f431dbe8ec5dcd9a6900, type: 2}
+  - {fileID: 2100000, guid: f76b9e5da821340df8aae8be61114b9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -621,8 +621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: 0
-  child: {fileID: 0}
-  rb: {fileID: 4542241366008258470}
+  children: []
+  leftSide: 0
   wheel: {fileID: 6174587460584597601}
 --- !u!1 &2951263431816784531
 GameObject:
