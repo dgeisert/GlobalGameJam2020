@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SnapZoneAxialManager : MonoBehaviour
 {
     public Transform touchingObject;
     public Transform referenceObject;
     public PartAxelOut rot1, rot2, rot3, rot4;
+    // We can display debug text there, if it's enabled.
+    private GameObject debugText = null;
 
+    public void Start()
+    {
+        debugText = GameObject.Find("DebugText");
+    }
     void Update()
     {
         if(touchingObject != null)
@@ -25,6 +32,10 @@ public class SnapZoneAxialManager : MonoBehaviour
                 angle -= 360;
             }
             int chooseRot = Mathf.FloorToInt(angle / 90);
+            if (null!=debugText) {
+                Text foo = debugText.GetComponent("Text") as Text;
+                foo.text = "Rot: " + chooseRot;
+            }
             rot1.gameObject.SetActive(chooseRot == 0);
             rot2.gameObject.SetActive(chooseRot == 1);
             rot3.gameObject.SetActive(chooseRot == 2);
