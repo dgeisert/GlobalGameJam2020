@@ -5,8 +5,15 @@ using UnityEngine;
 public class PartBase : MonoBehaviour
 {
     public float control;
+    public Rigidbody rb;
     public List<PartBase> children;
     public bool leftSide;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         PartUpdate();
