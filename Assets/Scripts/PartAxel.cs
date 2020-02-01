@@ -9,10 +9,13 @@ public class PartAxel : PartBase
     public override void PartUpdate()
     {
         axelTransform.Rotate(new Vector3(0, (leftSide ? -1 : 1) * control * Time.deltaTime, 0));
-        if(child == null)
+        if(children.Count == 0)
         {
             return;
         }
-        child.control = control;
+        foreach(PartBase child in children)
+        {
+            child.control = control;
+        }
     }
 }

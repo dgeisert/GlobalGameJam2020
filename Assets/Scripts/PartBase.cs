@@ -5,7 +5,7 @@ using UnityEngine;
 public class PartBase : MonoBehaviour
 {
     public float control;
-    public PartBase child;
+    public List<PartBase> children;
     public bool leftSide;
     void Update()
     {
@@ -14,11 +14,14 @@ public class PartBase : MonoBehaviour
 
     public virtual void PartUpdate()
     {
-        if(child == null)
+        if(children.Count == 0)
         {
             return;
         }
-        child.control = control;
+        foreach(PartBase child in children)
+        {
+            child.control = control;
+        }
     }
     public void OnSnap(GameObject go)
     {
@@ -27,11 +30,16 @@ public class PartBase : MonoBehaviour
         {
             return;
         }
-        child = pb;
-        child.leftSide = leftSide;
+        children.Add(pb);
+        pb.leftSide = leftSide;
     }
     public void OnUnsnap(GameObject go)
     {
-        child = null;
+        PartBase pb = go.GetComponent<PartBase>();
+        if(pb == null)
+        {
+            return;
+        }
+        children.Remove(pb);
     }
 }
