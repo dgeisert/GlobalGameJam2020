@@ -7,14 +7,12 @@ public class SnapZoneAxialManager : MonoBehaviour
 {
     public Transform touchingObject;
     public PartAxelOut rot1, rot2, rot3, rot4;
+    // We can display debug text there, if it's enabled.
     private GameObject debugText = null;
 
     public void Start()
     {
         debugText = GameObject.Find("DebugText");
-        if (debugText==null) {
-            Debug.Log("Debug text canvas not found, continuing.");
-        }
     }
     void Update()
     {
