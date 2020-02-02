@@ -72,6 +72,13 @@ public class PartCore : MonoBehaviour
     IEnumerator DoBuild()
     {
         yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
         foreach(PartAxelOut pao in leftAxels)
         {
             BuildColliders(pao);
