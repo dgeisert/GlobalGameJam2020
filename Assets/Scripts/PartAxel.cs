@@ -15,7 +15,10 @@ public class PartAxel : PartBase
         }
         foreach(PartBase child in children)
         {
-            child.control = control;
+            if (null != child)
+            {
+                child.control = control;
+            }
         }
     }
 }
