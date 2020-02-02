@@ -8,7 +8,7 @@ public class PartAxel : PartBase
     public bool reverse = false;
     public override void PartUpdate()
     {
-        axelTransform.Rotate(new Vector3(0, (leftSide ? -1 : 1) * control * Time.deltaTime, 0));
+        axelTransform.Rotate(new Vector3(0, (leftSide ? -1 : 1) * control * Time.deltaTime * 10, 0));
         if(children.Count == 0)
         {
             return;

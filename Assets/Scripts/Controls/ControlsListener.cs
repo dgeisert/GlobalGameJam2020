@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class ControlsEvent : UnityEvent<float>
+{
+}
+
 public class ControlsListener : MonoBehaviour
 {
     [Tooltip("for either hand choose right and select whileHeldOnly")]
     public ControlName controlButton;
     public bool whileHeldOnly = true;
     public UnityEvent actions;
+    public ControlsEvent floatActions;
     public string keyboard;
 
     void Update()
@@ -59,5 +65,10 @@ public class ControlsListener : MonoBehaviour
     {
         Debug.Log("Activate " + transform.name + ", " + actions.GetPersistentTarget(0));
         actions.Invoke();
+    }
+
+    public void Activate(float f)
+    {
+        floatActions.Invoke(f);
     }
 }

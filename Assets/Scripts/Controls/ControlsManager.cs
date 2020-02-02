@@ -22,7 +22,9 @@ public enum ControlName
     ButtonYPress,
     ButtonYRelease,
     MenuButtonPress,
-    MenuButtonRelease
+    MenuButtonRelease,
+    RightJoystickY,
+    LeftJoystickY
 }
 
 public class ControlsManager : MonoBehaviour
@@ -69,6 +71,18 @@ public class ControlsManager : MonoBehaviour
         foreach (ControlsListener cl in listeners[(ControlName) i])
         {
             cl.Activate();
+        }
+    }
+
+    public void ActivateControls(int i, float f)
+    {
+        if (!listeners.ContainsKey((ControlName) i))
+        {
+            return;
+        }
+        foreach (ControlsListener cl in listeners[(ControlName) i])
+        {
+            cl.Activate(f);
         }
     }
 
@@ -197,5 +211,13 @@ public class ControlsManager : MonoBehaviour
             menuPressed = false;
             ActivateControls(17);
         }
+    }
+    public void RightJoystickY(float f)
+    {
+        ActivateControls(18, f);
+    }
+    public void LeftJoystickY(float f)
+    {
+        ActivateControls(19, f);
     }
 }

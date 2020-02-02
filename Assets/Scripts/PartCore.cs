@@ -12,61 +12,42 @@ public class PartCore : MonoBehaviour
     public Transform colliderHolder;
     public Dictionary<PartBase, Transform> parts = new Dictionary<PartBase, Transform>();
     public float speed;
-    bool left, right;
+    float left, right;
     void Start()
     {
         Instance = this;
     }
-    public void LeftTriggerDown()
+    public void LeftJoystickY(float f)
     {
-        left = true;
+        left = f;
     }
-    public void LeftTriggerUp()
+    public void Left(float f)
     {
-        left = false;
+        axelLeftBack.Rotate(new Vector3(-speed * f * Time.deltaTime * 10, 0, 0));
+        axelLeftFront.Rotate(new Vector3(-speed * f * Time.deltaTime * 10, 0, 0));
+        foreach(PartAxelOut pao in leftAxels)
+        {
+            pao.control = speed * f;
+        }
     }
-    public void RightTriggerDown()
+    public void RightJoystickY(float f)
     {
-        right = true;
+        right = -f;
     }
-    public void RightTriggerUp()
+    public void Right(float f)
     {
-        right = false;
+        axelRightBack.Rotate(new Vector3(-speed * f * Time.deltaTime * 10, 0, 0));
+        axelRightFront.Rotate(new Vector3(-speed * f * Time.deltaTime * 10, 0, 0));
+        foreach(PartAxelOut pao in rightAxels)
+        {
+            pao.control = speed * f;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(left){
-            axelLeftBack.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
-            axelLeftFront.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
-            foreach(PartAxelOut pao in leftAxels)
-            {
-                pao.control = speed;
-            }
-        }
-        else
-        {
-            foreach(PartAxelOut pao in leftAxels)
-            {
-                pao.control = 0;
-            }
-        }
-        if(right){
-            axelRightBack.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
-            axelRightFront.Rotate(new Vector3(-speed * Time.deltaTime, 0, 0));
-            foreach(PartAxelOut pao in rightAxels)
-            {
-                pao.control = speed;
-            }
-        }
-        else
-        {
-            foreach(PartAxelOut pao in rightAxels)
-            {
-                pao.control = 0;
-            }
-        }
+        Right(right);
+        Left(left);
     }
 
     void BuildColliders(PartBase pb)

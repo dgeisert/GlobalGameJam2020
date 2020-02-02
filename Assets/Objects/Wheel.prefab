@@ -626,6 +626,7 @@ MonoBehaviour:
   children: []
   leftSide: 0
   wheel: {fileID: 6174587460584597601}
+  grounded: 0
 --- !u!1 &2951263431816784531
 GameObject:
   m_ObjectHideFlags: 0
