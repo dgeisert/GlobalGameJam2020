@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -275,12 +275,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d29d705506e6b84c98908494bf16049, type: 3}
---- !u!4 &226207186 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 475633564287292519, guid: c21f0da5a12364c4982f1bc34d5f64ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1226420151}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &247314073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1262,16 +1256,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 8854823994533030795}
-    - target: {fileID: 3799443293124666881, guid: c21f0da5a12364c4982f1bc34d5f64ea,
-        type: 3}
-      propertyPath: leftRemoteControl
-      value: 
-      objectReference: {fileID: 1646422677}
-    - target: {fileID: 6589128856285194346, guid: c21f0da5a12364c4982f1bc34d5f64ea,
-        type: 3}
-      propertyPath: controlButton
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c21f0da5a12364c4982f1bc34d5f64ea, type: 3}
 --- !u!114 &1230530402 stripped
@@ -1684,12 +1668,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.06}
   m_SizeDelta: {x: 1100, y: 566}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1646422677 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8611822868442645573, guid: fe1f79f469827204491edc0953c26e68,
-    type: 3}
-  m_PrefabInstance: {fileID: 6902927107611442152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1695730694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3239,75 +3217,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &6902927107611442152
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 226207186}
-    m_Modifications:
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.02580595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.004877448
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.08620959
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.008383831
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.06526434
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9941017
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 9.806001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 1.6240001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181714076018687499, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 7.6520004
-      objectReference: {fileID: 0}
-    - target: {fileID: 8611822868442645573, guid: fe1f79f469827204491edc0953c26e68,
-        type: 3}
-      propertyPath: m_Name
-      value: LeftRemoteControl
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fe1f79f469827204491edc0953c26e68, type: 3}
 --- !u!4 &7020639148602789687
 Transform:
   m_ObjectHideFlags: 0

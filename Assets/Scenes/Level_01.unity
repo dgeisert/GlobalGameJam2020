@@ -701,7 +701,7 @@ MonoBehaviour:
     2. Drive to goal
 
 
-    Press B to switch to drive mode'
+    Press Y to switch to drive mode'
 --- !u!222 &1456757151
 CanvasRenderer:
   m_ObjectHideFlags: 0
