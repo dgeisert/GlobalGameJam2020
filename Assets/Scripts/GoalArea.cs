@@ -21,7 +21,7 @@ public class GoalArea : MonoBehaviour
     // Called by the engine on collision. Or is it?
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name=="Core") {
+        if (RootGameObject(other.gameObject).name=="Core") {
             Log("Victory!");
         }
     }
@@ -32,6 +32,16 @@ public class GoalArea : MonoBehaviour
             return;
         }
         debugText.text = msg;
-    }    
+    }
+
+    GameObject RootGameObject(GameObject obj) {
+        while (true) {
+            if (obj.transform == null) { return obj; }
+            if (obj.transform.parent == null) { return obj; }            
+            if (obj.transform.parent.gameObject == null) { return obj; }            
+            if (obj.transform.parent.gameObject == obj) { return null; }
+            obj = obj.transform.parent.gameObject;
+        }
+    }
 
 }
