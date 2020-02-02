@@ -32,10 +32,6 @@ public class SnapZoneAxialManager : MonoBehaviour
                 angle -= 360;
             }
             int chooseRot = Mathf.FloorToInt(angle / 90);
-            if (null!=debugText) {
-                Text foo = debugText.GetComponent("Text") as Text;
-                foo.text = "Rot: " + chooseRot;
-            }
             rot1.gameObject.SetActive(chooseRot == 0);
             rot2.gameObject.SetActive(chooseRot == 1);
             rot3.gameObject.SetActive(chooseRot == 2);
