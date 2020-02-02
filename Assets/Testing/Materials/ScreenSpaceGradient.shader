@@ -1,4 +1,4 @@
-Shader "PushyPixels/VerticalScreenSpaceGradient" {
+Shader "Custom/VerticalScreenSpaceGradient" {
 Properties
 {
 	_Color ("Top Color", Color) = (1,1,1,1)
