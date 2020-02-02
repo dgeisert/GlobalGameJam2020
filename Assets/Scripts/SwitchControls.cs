@@ -8,12 +8,23 @@ public class SwitchControls : MonoBehaviour
     public GameObject controller;
     public GameObject leftRemoteControl;
 
+    public bool movementMode {
+        get { return movement.activeInHierarchy; }
+        set {
+            movement.SetActive(value);
+            controller.SetActive(!value);
+            leftRemoteControl.SetActive(!value);
+        }
+    }
+
+    void Start()
+    {
+        // Enforce consistent visibility for all objects.
+        movementMode = movementMode;
+    }
+
     public void DoSwitchControls()
     {
-        bool moving = movement.activeInHierarchy;
-        moving = !moving;
-        movement.SetActive(moving);
-        controller.SetActive(!moving);
-        leftRemoteControl.SetActive(!moving);
+        movementMode = !movementMode;
     }
 }

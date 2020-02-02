@@ -1205,12 +1205,12 @@ PrefabInstance:
     - target: {fileID: 474769002346830666, guid: c21f0da5a12364c4982f1bc34d5f64ea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.28
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 474769002346830666, guid: c21f0da5a12364c4982f1bc34d5f64ea,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.59
+      value: -4.21
       objectReference: {fileID: 0}
     - target: {fileID: 474769002346830666, guid: c21f0da5a12364c4982f1bc34d5f64ea,
         type: 3}
@@ -2072,7 +2072,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -13.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015381207
 MonoBehaviour:
@@ -2105,7 +2105,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debug text goes here
+  m_Text: Repair!
 --- !u!222 &2015381208
 CanvasRenderer:
   m_ObjectHideFlags: 0
