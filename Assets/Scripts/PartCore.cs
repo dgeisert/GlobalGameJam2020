@@ -10,7 +10,6 @@ public class PartCore : MonoBehaviour
     public List<PartAxelOut> leftAxels;
     public List<PartAxelOut> rightAxels;
     public Transform colliderHolder;
-    public Transform colliderBase;
     public Dictionary<PartBase, Transform> parts = new Dictionary<PartBase, Transform>();
     public float speed;
     bool left, right;
