@@ -5,6 +5,7 @@ using UnityEngine;
 public class PartBase : MonoBehaviour
 {
     public float control;
+    public Collider primaryCollider;
     public Rigidbody rb;
     public List<PartBase> children;
     public bool leftSide;
@@ -39,6 +40,7 @@ public class PartBase : MonoBehaviour
         }
         children.Add(pb);
         pb.leftSide = leftSide;
+        PartCore.Instance.Build();
     }
     public void OnUnsnap(GameObject go)
     {
@@ -48,5 +50,6 @@ public class PartBase : MonoBehaviour
             return;
         }
         children.Remove(pb);
+        PartCore.Instance.Rebuild();
     }
 }
