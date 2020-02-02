@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6521,6 +6521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: 0
+  primaryCollider: {fileID: 0}
   rb: {fileID: 0}
   children:
   - {fileID: 0}
@@ -12712,6 +12713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: 0
+  primaryCollider: {fileID: 0}
   rb: {fileID: 0}
   children:
   - {fileID: 0}
@@ -23252,11 +23254,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 640373220133304910, guid: 730c78c5436153a48bfe419cf24afa96,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1219468024229520431, guid: 730c78c5436153a48bfe419cf24afa96,
         type: 3}
       propertyPath: m_Name
