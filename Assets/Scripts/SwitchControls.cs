@@ -6,10 +6,14 @@ public class SwitchControls : MonoBehaviour
 {
     public GameObject movement;
     public GameObject controller;
+    public GameObject leftRemoteControl;
 
     public void DoSwitchControls()
     {
-        movement.SetActive(!movement.activeInHierarchy);
-        controller.SetActive(!controller.activeInHierarchy);
+        bool moving = movement.activeInHierarchy;
+        moving = !moving;
+        movement.SetActive(moving);
+        controller.SetActive(!moving);
+        leftRemoteControl.SetActive(!moving);
     }
 }
