@@ -8,4 +8,8 @@ public class ButtonTest : MonoBehaviour
     {
         Debug.Log("button pressed");
     }
+    public void ButtonTouched()
+    {
+        Debug.Log("Button touched");
+    }
 }
