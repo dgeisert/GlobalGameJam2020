@@ -10,7 +10,8 @@ public class PartWheel : PartBase
         if(transform.position.y < 0.2f)
         {
             wheel.Rotate(new Vector3(0, (leftSide ? -1 : 1) * control * Time.deltaTime * 10, 0));
-            PartCore.Instance.rb.AddForce(-PartCore.Instance.transform.forward * control / 10 * Time.deltaTime, ForceMode.VelocityChange);
+            PartCore.Instance.rb.AddForceAtPosition(-PartCore.Instance.transform.forward * control / 10 * Time.deltaTime,
+            PartCore.Instance.transform.position - PartCore.Instance.transform.up * 0.2f, ForceMode.VelocityChange);
             PartCore.Instance.transform.Rotate(0, (leftSide ? 1 : -1) * control / 6 * Time.deltaTime * 10, 0);
         }
     }
