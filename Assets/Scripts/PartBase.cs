@@ -39,7 +39,7 @@ public class PartBase : MonoBehaviour
             return;
         }
         children.Add(pb);
-        pb.leftSide = leftSide;
+        SetLeft(leftSide);
         PartCore.Instance.Build();
     }
     public void OnUnsnap(GameObject go)
@@ -51,5 +51,14 @@ public class PartBase : MonoBehaviour
         }
         children.Remove(pb);
         PartCore.Instance.Rebuild();
+    }
+
+    void SetLeft(bool leftSide)
+    {
+        foreach(PartBase child in children)
+        {
+            child.leftSide = leftSide;
+            child.SetLeft(leftSide);
+        }
     }
 }
