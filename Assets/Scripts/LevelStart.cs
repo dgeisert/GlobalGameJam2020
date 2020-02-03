@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelStart : MonoBehaviour
 {
@@ -19,8 +20,15 @@ public class LevelStart : MonoBehaviour
         }
     }
 
+    // Only possible collision is the user's hand, let's go!
+    void OnTriggerEnter(Collider other)
+    {
+        DoIt();
+    }
+
     public void DoIt() {
-        Log("(DoIt) Loading " + levelName);
+        Log("Loading " + levelName);
+        SceneManager.LoadScene(levelName);
     }
 
     private void Log(string logMessage)

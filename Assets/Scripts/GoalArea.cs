@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GoalArea : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GoalArea : MonoBehaviour
     {
         if (RootGameObject(other.gameObject).name=="Core") {
             Log("Victory!");
+            SceneManager.LoadScene("Level_Select");
         }
     }
 
